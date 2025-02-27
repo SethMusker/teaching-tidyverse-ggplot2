@@ -7,9 +7,13 @@
 # 
 # 
 
-install.packages(c("palmerpenguins",
-                   "tidyverse",
-                   "tidylog")) # Look at those rainbow parentheses! Majestic!
+install.packages(
+  c(
+    "palmerpenguins",
+    "tidyverse",
+    "tidylog"
+    )
+  ) # Look at those rainbow parentheses! Majestic!
 
 # Let's check out some Penguin data ------------------------------------------
 # Have a look at https://allisonhorst.github.io/palmerpenguins/ (ctrl+click to open)
