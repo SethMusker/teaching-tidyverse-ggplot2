@@ -1,11 +1,12 @@
 # Setting up
 # 
 # First things first, enable rainbow parentheses!
-# Tools -> Global Options -> Code (left panel) -> Display (Tab) -> Syntax (bottom) -> Use rainbox parentheses
+# Tools -> Global Options -> Code (left panel) -> Display (Tab) -> 
+#   Syntax (bottom) -> Use rainbox parentheses
 # Then choose a theme
 # Tools -> Global Options -> Appearance -> Editor Theme (I like Material)
 # 
-# 
+
 
 install.packages(
   c(
