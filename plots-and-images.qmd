@@ -1,7 +1,7 @@
 ---
 title: "images"
 author: "seth musker"
-format: revealjs
+format: html
 editor: visual
 ---
 
@@ -19,7 +19,7 @@ data("penguins",package="palmerpenguins")
 
 ### Plot 1
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
 
 bill_len_dep <- ggplot(data = penguins,
                          aes(x = bill_length_mm,
@@ -47,7 +47,7 @@ bill_len_dep
 
 ### plot 2
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=T}
 
 flipper_hist <- ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram(aes(fill = species), 
