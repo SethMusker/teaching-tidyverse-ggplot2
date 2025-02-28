@@ -1,11 +1,11 @@
 # Setting up
-# 
+#
 # First things first, enable rainbow parentheses!
-# Tools -> Global Options -> Code (left panel) -> Display (Tab) -> 
+# Tools -> Global Options -> Code (left panel) -> Display (Tab) ->
 #   Syntax (bottom) -> Use rainbox parentheses
 # Then choose a theme
 # Tools -> Global Options -> Appearance -> Editor Theme (I like Material)
-# 
+#
 
 
 install.packages(
@@ -13,13 +13,13 @@ install.packages(
     "palmerpenguins",
     "tidyverse",
     "tidylog"
-    )
-  ) # Look at those rainbow parentheses! Majestic!
+  )
+) # Look at those rainbow parentheses! Majestic!
 
 # Let's check out some Penguin data ------------------------------------------
 # Have a look at https://allisonhorst.github.io/palmerpenguins/ (ctrl+click to open)
 library(palmerpenguins)
-data("penguins",package="palmerpenguins")
+data("penguins", package = "palmerpenguins")
 
 print(penguins)
 summary(penguins)
@@ -36,23 +36,24 @@ p_adelie_female_stepwise <- subset(p_adelie, sex == "female")
 summary(p_adelie_female_stepwise)
 
 ## >>>>>>>>>> Option 2: wrap the functions  -------------------
-p_adelie_female_wrap <- subset(subset(penguins, species == "Adelie"), sex == "female")
+p_adelie_female_wrap <- subset(penguins, species == "Adelie")
+summary(p_adelie_female_wrap)
 
 ## >>>>>>>>>> Option 3: Use pipes  ----------------------------
-p_adelie_female_pipe <- penguins %>% 
-  filter(species == "Adelie") %>% 
+p_adelie_female_pipe <- penguins %>%
+  filter(species == "Adelie") %>%
   filter(sex == "female")
 
 # Error: could not find function "%>%"
 help.search("%>%")
 # Alternatively
 ??`%>%`
-# Note: explain ctrl+shift+m (cmd+shift+m for mac) 
+# Note: explain ctrl+shift+m (cmd+shift+m for mac)
 # (if not working, Tools -> Modify Keyboard Shortcuts...)
 library(magrittr) # this was installed as part of tidyverse
 
-p_adelie_female_pipe <- penguins %>% 
-  filter(species == "Adelie") %>% 
+p_adelie_female_pipe <- penguins %>%
+  filter(species == "Adelie") %>%
   filter(sex == "female")
 
 # Another Error! Yay!
@@ -60,7 +61,7 @@ p_adelie_female_pipe <- penguins %>%
 # We can inspect the series of events to see where the problem occurred:
 traceback()
 # The problem occurred with `filter`
-?filter 
+?filter
 ## "Applies linear filtering to a univariate time series or to each series
 ##   separately of a multivariate time series." Doesn't feel right...
 ??filter # A bit overwhelming...
@@ -83,15 +84,16 @@ library(tidyverse)
 ## Load the tidylog package for transparency
 library(tidylog)
 
-p_adelie_female_pipe <- penguins %>% 
-  filter(species == "Adelie") %>% 
+p_adelie_female_pipe <- penguins %>%
+  filter(species == "Adelie") %>%
   filter(sex == "female")
 
 # It worked!
 p_adelie_female_pipe
 
 # Check that the result is the same
-identical(p_adelie_female_wrap,p_adelie_female_pipe)
+identical(p_adelie_female_wrap, p_adelie_female_pipe)
+identical(p_adelie_female_wrap, p_adelie)
 
 
 ## >>>>>>>>>>> Why use Pipes?
@@ -102,3 +104,12 @@ identical(p_adelie_female_wrap,p_adelie_female_pipe)
 ## 5. Easier to modify
 ## 6. Powerful
 ## 7. Flexible
+
+
+# Shortcuts ---------------------------------------------------------------
+
+# Pipe: ctrl+shift+M
+# Comment out: ctrl+shift+C
+# Refactor comments: ctrl+shift+/
+# New section: ctrl+shift+R
+# Stylise code: ctrl+shift+A
